@@ -1,0 +1,6 @@
+[web]
+192.168.0.60 ansible_user=root ansible_ssh_private_key_file=/id_rsa
+
+[web:vars]
+serName=httpd
+yourname=aish

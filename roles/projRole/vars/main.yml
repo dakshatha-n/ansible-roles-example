@@ -1,0 +1,13 @@
+---
+# vars file for projRole
+servname: httpd
+companyname: Deloitte
+yourname: Dakshatha
+age: 22
+emailaddress: aish@gmail.com
+doc_root: /var/www/html
+http_port: 8080
+doc_dir: /ansible/
+max_clients: 5
+doc_root1: /etc/httpd/conf
+

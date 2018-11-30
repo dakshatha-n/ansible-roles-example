@@ -1,0 +1,10 @@
+---
+- hosts: web
+  sudo: yes
+
+  vars_files:
+  - "vars/external_vars.yaml"
+
+  tasks:
+  - name: Install {{ser_Name}}
+    yum: name={{ser_Name}} state=present

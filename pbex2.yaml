@@ -1,0 +1,9 @@
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Create group
+    group: name=group 
+  - name: Create user
+    user: name=deploy-user group=group shell=/bin/bash

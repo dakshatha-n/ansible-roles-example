@@ -1,0 +1,9 @@
+---
+- hosts: web
+  sudo: yes
+  vars:
+    web_server: httpd
+
+  tasks:
+  - name: Install httpd
+    yum: name={{web_server}} state=present

@@ -1,0 +1,7 @@
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Install httpd
+    yum: name={{ser_name}} state=present

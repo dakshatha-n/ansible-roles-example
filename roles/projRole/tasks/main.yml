@@ -1,0 +1,25 @@
+---
+# tasks file for projRole
+ - name: Install httpd
+   yum: name={{servname}} state=present
+   when: ansible_distribution == 'RHEL'
+ - name: Copy Site Files
+   template: src=templates/index.j2 dest={{ doc_root }}/index.html
+   notify:
+     - Restart Apache
+ - name: Copy Site Files 2
+   template: src=templates/httpd.j2 dest={{ doc_root1 }}/httpd.conf
+   notify:
+     - Restart Apache
+ - name: Create group
+   group: name=Deloitte
+ - name: Create user
+   user: name=deploy group=Deloitte
+ - name: Install common software requirements
+   yum: pkg={{ item }} state=installed
+   with_items:
+     - git
+     - ntp
+     - vim
+# - name: Copy and Execute the script 
+#   script: /home/user/userScript.sh

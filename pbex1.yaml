@@ -1,0 +1,8 @@
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Create a group called deploy
+    group: name=deploy
+...

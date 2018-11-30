@@ -1,0 +1,9 @@
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Create file
+    file: path=/var/www/html/index.html state=touch owner=root
+  - name: Copy content
+    copy: content=hello dest=/var/www/html/index.html
